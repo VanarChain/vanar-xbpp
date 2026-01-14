@@ -1,36 +1,37 @@
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Wallet, PenTool, Sparkles } from 'lucide-react';
 import { scenarios } from '@/lib/data/scenarios';
-import { Category, RiskLevel } from '@/lib/types';
-import { cn } from '@/lib/utils';
-import { AnimatedBackground, GlowCard } from '@/components/effects';
+import { Category } from '@/lib/types';
+import { AnimatedBackground } from '@/components/effects';
+import { CategoryFilter, ScenarioCard } from '@/components/scenarios';
 
-const categoryIcons: Record<Category, React.ReactNode> = {
-  SPEND: <Wallet className="h-4 w-4" />,
-  SIGN: <PenTool className="h-4 w-4" />,
-  DEFENSE: <Shield className="h-4 w-4" />,
-};
-
-const categoryColors: Record<Category, string> = {
-  SPEND: 'bg-primary/10 text-primary border-primary/20',
-  SIGN: 'bg-escalate/10 text-escalate border-escalate/20',
-  DEFENSE: 'bg-block/10 text-block border-block/20',
-};
-
-const riskConfig: Record<RiskLevel, { bg: string; text: string; pulse: boolean }> = {
-  LOW: { bg: 'bg-allow/15', text: 'text-allow', pulse: false },
-  MEDIUM: { bg: 'bg-escalate/15', text: 'text-escalate', pulse: false },
-  HIGH: { bg: 'bg-block/15', text: 'text-block', pulse: true },
-};
+type FilterOption = 'ALL' | Category;
 
 export default function Scenarios() {
+  const [selectedCategory, setSelectedCategory] = useState<FilterOption>('ALL');
+
+  const filteredScenarios = useMemo(() => {
+    if (selectedCategory === 'ALL') return scenarios;
+    return scenarios.filter(s => s.category === selectedCategory);
+  }, [selectedCategory]);
+
+  const counts = useMemo(() => ({
+    ALL: scenarios.length,
+    SPEND: scenarios.filter(s => s.category === 'SPEND').length,
+    SIGN: scenarios.filter(s => s.category === 'SIGN').length,
+    DEFENSE: scenarios.filter(s => s.category === 'DEFENSE').length,
+  }), []);
+
+  // Determine featured scenarios (first HIGH risk in view, or first overall)
+  const featuredIndex = filteredScenarios.findIndex(s => s.risk_level === 'HIGH');
+
   return (
     <div className="min-h-screen py-20 px-6 relative overflow-hidden">
       <AnimatedBackground variant="subtle" />
       
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <header className="text-center mb-20">
+        <header className="text-center mb-16">
           <Link 
             to="/" 
             className="inline-flex items-center gap-2 text-sm font-mono tracking-widest text-muted-foreground uppercase hover:text-primary transition-colors mb-8 animate-fade-in"
@@ -54,82 +55,51 @@ export default function Scenarios() {
           </p>
         </header>
         
-        {/* Scenario Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {scenarios.map((scenario, index) => {
-            const risk = riskConfig[scenario.risk_level];
-            const category = categoryColors[scenario.category];
-            
-            return (
-              <Link
-                key={scenario.id}
-                to={`/compare?scenario=${scenario.id}`}
-                className="group block animate-fade-in"
-                style={{ animationDelay: `${(index + 1) * 100}ms` }}
-              >
-                <GlowCard 
-                  className={cn(
-                    "h-full p-8 relative overflow-hidden",
-                    "hover:translate-y-[-2px] hover:bg-card/80"
-                  )}
-                  glowColor="primary"
-                >
-                  {/* Background gradient on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Top row: Category + Risk */}
-                  <div className="flex items-center justify-between mb-6 relative">
-                    <span className={cn(
-                      "flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-mono uppercase tracking-wider",
-                      category
-                    )}>
-                      {categoryIcons[scenario.category]}
-                      {scenario.category}
-                    </span>
-                    <span className={cn(
-                      "px-3 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider relative",
-                      risk.bg,
-                      risk.text
-                    )}>
-                      {risk.pulse && (
-                        <span className="absolute inset-0 rounded-full bg-block/20 animate-pulse" />
-                      )}
-                      <span className="relative">{scenario.risk_level} RISK</span>
-                    </span>
-                  </div>
-                  
-                  {/* Title */}
-                  <h2 className="text-2xl md:text-3xl font-medium mb-4 group-hover:text-primary transition-colors relative">
-                    {scenario.name}
-                  </h2>
-                  
-                  {/* Narrative */}
-                  <p className="text-muted-foreground text-base leading-relaxed mb-8 relative">
-                    "{scenario.narrative}"
-                  </p>
-                  
-                  {/* CTA */}
-                  <div className="flex items-center text-sm text-primary font-medium relative">
-                    <Sparkles className="mr-2 h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="group-hover:translate-x-1 transition-transform">
-                      Use this scenario
-                    </span>
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
-                  </div>
-                  
-                  {/* Event count indicator */}
-                  <div className="absolute bottom-8 right-8 text-xs font-mono text-muted-foreground/50">
-                    {scenario.event_stream.length} events
-                  </div>
-                </GlowCard>
-              </Link>
-            );
-          })}
+        {/* Category Filter */}
+        <div className="mb-12 animate-fade-in" style={{ animationDelay: '300ms' }}>
+          <CategoryFilter 
+            selected={selectedCategory}
+            onChange={setSelectedCategory}
+            counts={counts}
+          />
+        </div>
+
+        {/* Category description */}
+        {selectedCategory !== 'ALL' && (
+          <div className="text-center mb-12 animate-fade-in">
+            <p className="text-muted-foreground">
+              {selectedCategory === 'SPEND' && 'Financial transactions, vendor relationships, and spending controls.'}
+              {selectedCategory === 'SIGN' && 'Cryptographic signatures, approvals, and authorization chains.'}
+              {selectedCategory === 'DEFENSE' && 'Threat detection, address verification, and security responses.'}
+            </p>
+          </div>
+        )}
+        
+        {/* Scenario Grid - Masonry-style with featured cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {filteredScenarios.map((scenario, index) => (
+            <ScenarioCard
+              key={scenario.id}
+              scenario={scenario}
+              index={index}
+              featured={index === featuredIndex && filteredScenarios.length > 2}
+            />
+          ))}
         </div>
         
+        {/* Empty state */}
+        {filteredScenarios.length === 0 && (
+          <div className="text-center py-20 animate-fade-in">
+            <p className="text-muted-foreground">No scenarios in this category yet.</p>
+          </div>
+        )}
+        
         {/* Bottom hint */}
-        <p className="text-center text-sm text-muted-foreground/60 mt-16 font-mono animate-fade-in" style={{ animationDelay: '600ms' }}>
-          Click a scenario to compare policies
+        <p 
+          className="text-center text-sm text-muted-foreground/60 mt-16 font-mono animate-fade-in" 
+          style={{ animationDelay: '600ms' }}
+        >
+          {filteredScenarios.length} scenario{filteredScenarios.length !== 1 ? 's' : ''} available
         </p>
       </div>
     </div>
