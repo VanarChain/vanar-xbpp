@@ -37,6 +37,8 @@ export function Header() {
   
   if (currentPath === '/spec') {
     breadcrumbs.push({ label: 'Specification', path: '/spec', active: true });
+  } else if (currentPath === '/test-suite') {
+    breadcrumbs.push({ label: 'Test Suite', path: '/test-suite', active: true });
   } else {
     // Add all steps up to current
     const orderedRoutes = Object.entries(routeConfig)

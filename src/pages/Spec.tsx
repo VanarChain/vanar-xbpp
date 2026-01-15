@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BookOpen, Copy, Check, ChevronDown, ChevronRight, Download, FileJson, Shield, Zap, AlertTriangle, ExternalLink, Sparkles, Play, List } from 'lucide-react';
+import { BookOpen, Copy, Check, ChevronDown, ChevronRight, Download, FileJson, Shield, Zap, AlertTriangle, ExternalLink, Sparkles, Play, List, FlaskConical } from 'lucide-react';
 import { AnimatedBackground } from '@/components/effects';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -154,7 +154,13 @@ export default function Spec() {
                 </button>
               ))}
               
-              <div className="pt-6 border-t border-border mt-6">
+              <div className="pt-6 border-t border-border mt-6 space-y-2">
+                <Button variant="outline" size="sm" className="w-full justify-start gap-2" asChild>
+                  <Link to="/test-suite">
+                    <FlaskConical className="h-4 w-4" />
+                    Test Suite
+                  </Link>
+                </Button>
                 <Button variant="outline" size="sm" className="w-full justify-start gap-2" asChild>
                   <Link to="/policies">
                     <Shield className="h-4 w-4" />
