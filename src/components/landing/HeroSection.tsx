@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, FileText, Terminal, BookOpen, Library, PlayCircle, FlaskConical, Menu, X } from 'lucide-react';
+import { ArrowRight, FileText, Terminal, BookOpen, Library, PlayCircle, FlaskConical, Menu, X, MessageSquare, Cpu, Check, XIcon, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 
@@ -176,7 +176,7 @@ export function HeroSection() {
             {/* Intent */}
             <div className="flex flex-col items-center gap-1.5">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-muted/50 border border-border/50 flex items-center justify-center">
-                <span className="text-lg md:text-xl">💬</span>
+                <MessageSquare className="h-5 w-5 md:h-6 md:w-6 text-muted-foreground" />
               </div>
               <span className="text-xs font-mono text-muted-foreground uppercase tracking-wide">Intent</span>
             </div>
@@ -192,7 +192,7 @@ export function HeroSection() {
             {/* Interpret */}
             <div className="flex flex-col items-center gap-1.5">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <span className="text-lg md:text-xl">⚙️</span>
+                <Cpu className="h-5 w-5 md:h-6 md:w-6 text-primary" />
               </div>
               <span className="text-xs font-mono text-primary uppercase tracking-wide">xBPP</span>
             </div>
@@ -209,13 +209,13 @@ export function HeroSection() {
             <div className="flex flex-col items-center gap-1.5">
               <div className="flex gap-1">
                 <div className="w-5 h-5 md:w-6 md:h-6 rounded bg-[hsl(var(--decision-allow))]/20 border border-[hsl(var(--decision-allow))]/40 flex items-center justify-center">
-                  <span className="text-[10px] md:text-xs">✓</span>
+                  <Check className="h-3 w-3 md:h-3.5 md:w-3.5 text-[hsl(var(--decision-allow))]" />
                 </div>
                 <div className="w-5 h-5 md:w-6 md:h-6 rounded bg-[hsl(var(--decision-block))]/20 border border-[hsl(var(--decision-block))]/40 flex items-center justify-center">
-                  <span className="text-[10px] md:text-xs">✗</span>
+                  <XIcon className="h-3 w-3 md:h-3.5 md:w-3.5 text-[hsl(var(--decision-block))]" />
                 </div>
                 <div className="w-5 h-5 md:w-6 md:h-6 rounded bg-[hsl(var(--decision-escalate))]/20 border border-[hsl(var(--decision-escalate))]/40 flex items-center justify-center">
-                  <span className="text-[10px] md:text-xs">?</span>
+                  <HelpCircle className="h-3 w-3 md:h-3.5 md:w-3.5 text-[hsl(var(--decision-escalate))]" />
                 </div>
               </div>
               <span className="text-xs font-mono text-muted-foreground uppercase tracking-wide">Verdict</span>
