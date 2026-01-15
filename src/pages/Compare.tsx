@@ -4,7 +4,8 @@ import { ArrowRight, ChevronDown, ChevronUp, Copy, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePolicyLabStore } from '@/lib/store';
 import { getScenarioById } from '@/lib/data/scenarios';
-import { permissivePolicy, restrictivePolicy } from '@/lib/data/policies';
+import { permissivePolicy, restrictivePolicy, getConstraintsForCategory } from '@/lib/data/policies';
+import { Category } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { AnimatedBackground, GlowCard } from '@/components/effects';
@@ -72,6 +73,7 @@ export default function Compare() {
               expanded={expandedA}
               onToggleExpand={() => setExpandedA(!expandedA)}
               variant="permissive"
+              scenarioCategory={scenario.category}
             />
           </div>
           
@@ -82,6 +84,7 @@ export default function Compare() {
               expanded={expandedB}
               onToggleExpand={() => setExpandedB(!expandedB)}
               variant="restrictive"
+              scenarioCategory={scenario.category}
             />
           </div>
         </div>
@@ -109,13 +112,16 @@ interface PolicyPanelProps {
   expanded: boolean;
   onToggleExpand: () => void;
   variant: 'permissive' | 'restrictive';
+  scenarioCategory: Category;
 }
 
-function PolicyPanel({ policy, expanded, onToggleExpand, variant }: PolicyPanelProps) {
+function PolicyPanel({ policy, expanded, onToggleExpand, variant, scenarioCategory }: PolicyPanelProps) {
   const [copied, setCopied] = useState(false);
   
-  const uniqueConstraints = policy.constraints.filter(c => !c.isShared);
-  const sharedConstraints = policy.constraints.filter(c => c.isShared);
+  // Filter constraints to show only those relevant to the scenario category
+  const relevantConstraints = getConstraintsForCategory(policy, scenarioCategory);
+  const uniqueConstraints = relevantConstraints.filter(c => !c.isShared);
+  const sharedConstraints = relevantConstraints.filter(c => c.isShared);
   
   const handleCopyHash = () => {
     navigator.clipboard.writeText(policy.hash);

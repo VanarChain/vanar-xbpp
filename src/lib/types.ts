@@ -12,6 +12,7 @@ export interface Constraint {
   type: 'limit' | 'require' | 'deny' | 'escalate';
   parameter?: string | number;
   isShared?: boolean; // true if both policies have this constraint
+  category?: Category; // which scenario category this constraint applies to
 }
 
 export interface Event {
