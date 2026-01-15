@@ -117,6 +117,11 @@ export default {
           "0%": { width: "0%", opacity: "0" },
           "100%": { width: "100%", opacity: "1" },
         },
+        "flow": {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "50%": { opacity: "1" },
+          "100%": { transform: "translateX(100%)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -130,6 +135,7 @@ export default {
         "timeline-pulse": "timeline-pulse 2s ease-in-out infinite",
         "dim-in": "dim-in 0.8s ease-out forwards",
         "split-reveal": "split-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "flow": "flow 2s ease-in-out infinite",
       },
     },
   },
