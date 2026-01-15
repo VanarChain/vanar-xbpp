@@ -1,8 +1,9 @@
 import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Play, CheckCircle, XCircle, AlertCircle, DollarSign, User, Zap, Shield, 
   AlertTriangle, Globe, Fuel, Clock, Lock, Skull, Activity, ChevronDown, ChevronUp,
-  Layers, RefreshCw
+  Layers, RefreshCw, FlaskConical
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -580,6 +581,20 @@ export function AdvancedVerdictSimulator({ config }: AdvancedVerdictSimulatorPro
           </div>
         </div>
       )}
+      
+      {/* CTA to Test Suite */}
+      <div className="mt-8 p-6 rounded-lg border border-primary/20 bg-primary/5 text-center">
+        <h3 className="text-lg font-medium mb-2">Run Against All Scenarios</h3>
+        <p className="text-sm text-muted-foreground mb-4">
+          Test your policy configuration against all {22} scenarios in the library
+        </p>
+        <Button asChild className="gap-2">
+          <Link to="/test-suite">
+            <FlaskConical className="h-4 w-4" />
+            Open Test Suite
+          </Link>
+        </Button>
+      </div>
     </div>
   );
 }

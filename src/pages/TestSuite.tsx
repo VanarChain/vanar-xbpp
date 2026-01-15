@@ -12,7 +12,10 @@ import {
   Zap,
   Shield,
   PenTool,
-  Filter
+  Filter,
+  Download,
+  FileJson,
+  FileSpreadsheet
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -256,6 +259,70 @@ export default function TestSuite() {
     }));
   }, [results, verdictFilter]);
 
+  const exportResults = (format: 'json' | 'csv') => {
+    if (results.length === 0) return;
+    
+    const timestamp = new Date().toISOString().split('T')[0];
+    
+    if (format === 'json') {
+      const exportData = {
+        exportedAt: new Date().toISOString(),
+        postures: results.map(r => ({
+          posture: r.posture,
+          summary: {
+            total: r.results.length,
+            passed: r.passedCount,
+            failed: r.failedCount,
+            escalated: r.escalatedCount,
+            runTimeMs: r.runTime,
+          },
+          results: r.results.map(result => ({
+            scenario: result.scenarioName,
+            category: result.category,
+            verdict: result.verdict,
+            expectedVerdict: result.expectedVerdict,
+            passed: result.passed,
+            reasonCodes: result.reasonCodes,
+            explanation: result.explanation,
+          })),
+        })),
+      };
+      
+      const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `xbpp-test-results-${timestamp}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } else {
+      // CSV export
+      const rows: string[] = ['Posture,Scenario,Category,Verdict,Expected,Passed,Reason Codes'];
+      
+      results.forEach(suiteResult => {
+        suiteResult.results.forEach(result => {
+          rows.push([
+            suiteResult.posture,
+            `"${result.scenarioName}"`,
+            result.category,
+            result.verdict,
+            result.expectedVerdict || '',
+            result.passed ? 'Yes' : 'No',
+            `"${result.reasonCodes.join(', ')}"`,
+          ].join(','));
+        });
+      });
+      
+      const blob = new Blob([rows.join('\n')], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `xbpp-test-results-${timestamp}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background pt-20">
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -333,7 +400,7 @@ export default function TestSuite() {
               </div>
             </div>
 
-            <div className="flex gap-3 mt-6">
+            <div className="flex flex-wrap gap-3 mt-6">
               <Button 
                 onClick={runTestSuite} 
                 disabled={isRunning || selectedPostures.length === 0}
@@ -359,6 +426,27 @@ export default function TestSuite() {
               >
                 Clear Results
               </Button>
+              
+              {results.length > 0 && (
+                <>
+                  <Button
+                    variant="outline"
+                    onClick={() => exportResults('json')}
+                    className="gap-2"
+                  >
+                    <FileJson className="h-4 w-4" />
+                    Export JSON
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => exportResults('csv')}
+                    className="gap-2"
+                  >
+                    <FileSpreadsheet className="h-4 w-4" />
+                    Export CSV
+                  </Button>
+                </>
+              )}
             </div>
           </CardContent>
         </Card>
