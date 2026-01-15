@@ -3,6 +3,7 @@ import {
   HeroSection,
   ProblemSection,
   InsightSection,
+  LandscapeSection,
   WhatIsSection,
   ParadigmShiftSection,
   HowItWorksSection,
@@ -25,6 +26,7 @@ export default function Landing() {
       <HeroSection />
       <ProblemSection />
       <InsightSection />
+      <LandscapeSection />
       <WhatIsSection />
       <ParadigmShiftSection />
       <HowItWorksSection />
