@@ -18,29 +18,23 @@ import PolicyBank from "./pages/PolicyBank";
 import TestSuite from "./pages/TestSuite";
 import NotFound from "./pages/NotFound";
 
+// Learn pages
+import LearnIndex from "./pages/learn/index";
+import QuickStart from "./pages/learn/QuickStart";
+import ByExample from "./pages/learn/ByExample";
+import Concepts from "./pages/learn/Concepts";
+
+// Library pages
+import LibraryIndex from "./pages/library/index";
+import ReasonCodes from "./pages/library/ReasonCodes";
+import Agents from "./pages/library/Agents";
+
 const queryClient = new QueryClient();
 
 const pageVariants = {
-  initial: {
-    opacity: 0,
-    y: 12,
-  },
-  enter: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94] as const,
-    },
-  },
-  exit: {
-    opacity: 0,
-    y: -12,
-    transition: {
-      duration: 0.25,
-      ease: [0.25, 0.46, 0.45, 0.94] as const,
-    },
-  },
+  initial: { opacity: 0, y: 12 },
+  enter: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] } },
+  exit: { opacity: 0, y: -12, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
 function AnimatedRoutes() {
@@ -58,6 +52,21 @@ function AnimatedRoutes() {
       >
         <Routes location={location}>
           <Route path="/" element={<Landing />} />
+          
+          {/* Learn Routes */}
+          <Route path="/learn" element={<LearnIndex />} />
+          <Route path="/learn/quick-start" element={<QuickStart />} />
+          <Route path="/learn/by-example" element={<ByExample />} />
+          <Route path="/learn/concepts" element={<Concepts />} />
+          
+          {/* Library Routes */}
+          <Route path="/library" element={<LibraryIndex />} />
+          <Route path="/library/policies" element={<PolicyBank />} />
+          <Route path="/library/scenarios" element={<Scenarios />} />
+          <Route path="/library/reason-codes" element={<ReasonCodes />} />
+          <Route path="/library/agents" element={<Agents />} />
+          
+          {/* Demo Flow */}
           <Route path="/scenarios" element={<Scenarios />} />
           <Route path="/policies" element={<PolicyBank />} />
           <Route path="/matrix" element={<Matrix />} />
@@ -66,8 +75,11 @@ function AnimatedRoutes() {
           <Route path="/diff" element={<Diff />} />
           <Route path="/summary" element={<Summary />} />
           <Route path="/export" element={<Export />} />
+          
+          {/* Spec & Tools */}
           <Route path="/spec" element={<Spec />} />
           <Route path="/test-suite" element={<TestSuite />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>
