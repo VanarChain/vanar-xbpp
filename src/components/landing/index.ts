@@ -1,6 +1,7 @@
 export { HeroSection } from './HeroSection';
 export { ProblemSection } from './ProblemSection';
 export { InsightSection } from './InsightSection';
+export { LandscapeSection } from './LandscapeSection';
 export { WhatIsSection } from './WhatIsSection';
 export { ParadigmShiftSection } from './ParadigmShiftSection';
 export { HowItWorksSection } from './HowItWorksSection';
