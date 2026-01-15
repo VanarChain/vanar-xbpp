@@ -181,10 +181,12 @@ export function HeroSection() {
               <span className="text-xs font-mono text-muted-foreground uppercase tracking-wide">Intent</span>
             </div>
             
-            {/* Arrow */}
-            <div className="flex items-center text-muted-foreground/50">
-              <div className="w-6 md:w-10 h-px bg-gradient-to-r from-muted-foreground/20 to-muted-foreground/40" />
-              <ArrowRight className="h-4 w-4 -ml-1" />
+            {/* Arrow 1 - Animated */}
+            <div className="flex items-center text-primary/60 relative">
+              <div className="w-6 md:w-10 h-px bg-gradient-to-r from-primary/20 to-primary/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary to-transparent animate-[flow_2s_ease-in-out_infinite]" />
+              </div>
+              <ArrowRight className="h-4 w-4 -ml-1 animate-pulse" />
             </div>
             
             {/* Interpret */}
@@ -195,10 +197,12 @@ export function HeroSection() {
               <span className="text-xs font-mono text-primary uppercase tracking-wide">xBPP</span>
             </div>
             
-            {/* Arrow */}
-            <div className="flex items-center text-muted-foreground/50">
-              <div className="w-6 md:w-10 h-px bg-gradient-to-r from-muted-foreground/40 to-muted-foreground/20" />
-              <ArrowRight className="h-4 w-4 -ml-1" />
+            {/* Arrow 2 - Animated */}
+            <div className="flex items-center text-primary/60 relative">
+              <div className="w-6 md:w-10 h-px bg-gradient-to-r from-primary/50 to-primary/20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary to-transparent animate-[flow_2s_ease-in-out_infinite_0.5s]" />
+              </div>
+              <ArrowRight className="h-4 w-4 -ml-1 animate-pulse" />
             </div>
             
             {/* Verdict */}
