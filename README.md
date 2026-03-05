@@ -1,73 +1,41 @@
-# Welcome to your Lovable project
+# Vanar xBPP
 
-## Project info
+**The policy standard for agent transactions — built on VanarChain.**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+xBPP (Extended Business Policy Protocol) gives AI agents a verifiable way to prove they're operating within defined boundaries before spending money or taking actions.
 
-## How can I edit this code?
+> Agents can spend money. They just can't prove they should. **xBPP changes that.**
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- 🏛️ **Policy Playground** — Interactive policy editor and simulator
+- 📋 **Spec** — Full xBPP technical specification
+- 🧪 **Test Suite** — Verification dashboard with scenario runs
+- 📚 **Library** — Policy bank, scenarios, and templates
+- 🎓 **Learn** — Getting started guides
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- React + TypeScript + Vite
+- Tailwind CSS + shadcn/ui
+- Figtree + JetBrains Mono fonts
+- Vanar teal (`#03D9AF`) design system
 
-**Use your preferred IDE**
+## Development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Build:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build
+```
 
-**Use GitHub Codespaces**
+## Links
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **VanarChain:** https://vanarchain.com
+- **Protocol:** xBPP (Extended Business Policy Protocol)
+- **Package:** `@vanarchain/xbpp`

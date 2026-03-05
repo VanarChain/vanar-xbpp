@@ -9,13 +9,13 @@ const steps = [
   {
     title: 'Install the SDK',
     description: 'Add xBPP to your project with a single command.',
-    code: 'npm install @anthropic/xbpp',
+    code: 'npm install @vanarchain/xbpp',
     time: '10 seconds',
   },
   {
     title: 'Wrap Your Client',
     description: 'xBPP wraps your x402 client to enforce policies.',
-    code: `import { xbpp } from '@anthropic/xbpp';
+    code: `import { xbpp } from '@vanarchain/xbpp';
 import { x402Client } from '@coinbase/x402';
 
 const client = xbpp.wrap(x402Client, {

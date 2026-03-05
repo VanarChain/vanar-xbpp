@@ -1,7 +1,8 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "vanar-xbpp",
+  "description": "VanarChain xBPP — The policy standard for agent transactions",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +14,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@fontsource/figtree": "^5.2.10",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@hookform/resolvers": "^3.10.0",

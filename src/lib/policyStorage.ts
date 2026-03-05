@@ -1,6 +1,6 @@
 import { SavedPolicy, PolicyConfig } from './types';
 
-const STORAGE_KEY = 'bpplab-saved-policies';
+const STORAGE_KEY = 'vanarxbpp-saved-policies';
 
 export function generatePolicyId(): string {
   return `pol_${Date.now().toString(36)}_${Math.random().toString(36).substr(2, 6)}`;

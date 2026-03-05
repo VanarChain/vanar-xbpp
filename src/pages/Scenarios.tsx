@@ -77,7 +77,7 @@ export default function Scenarios() {
             className="inline-flex items-center gap-2 text-sm font-mono tracking-widest text-muted-foreground uppercase hover:text-primary transition-colors mb-8 animate-fade-in"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            BPPLAB
+            Vanar xBPP
           </Link>
           <h1 
             className="text-4xl md:text-5xl lg:text-6xl font-medium mt-6 mb-6 animate-fade-in"

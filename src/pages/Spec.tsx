@@ -769,12 +769,12 @@ export default function Spec() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-medium mb-3">Installation</h3>
-                  <CodeBlock code="npm install @anthropic/xbpp" language="bash" />
+                  <CodeBlock code="npm install @vanarchain/xbpp" language="bash" />
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-medium mb-3">30-Second Integration</h3>
-                  <CodeBlock code={`import { xbpp } from '@anthropic/xbpp';
+                  <CodeBlock code={`import { xbpp } from '@vanarchain/xbpp';
 import { x402Client } from '@coinbase/x402';
 
 // Wrap your x402 client with xBPP protection
@@ -804,7 +804,7 @@ const response = await client.fetch(url);`} />
                 
                 <div>
                   <h3 className="text-lg font-medium mb-3">Error Handling</h3>
-                  <CodeBlock code={`import { xbpp, BlockedError } from '@anthropic/xbpp';
+                  <CodeBlock code={`import { xbpp, BlockedError } from '@vanarchain/xbpp';
 
 try {
   const response = await client.fetch(url);

@@ -43,7 +43,7 @@ export function HeroSection() {
             <Link to="/" className="flex items-center gap-2.5 group">
               <div className="w-2.5 h-2.5 rounded-full bg-primary group-hover:scale-110 transition-transform" />
               <span className="text-sm font-mono font-medium tracking-[0.15em] uppercase text-foreground">
-                BPPLAB
+                VANAR xBPP
               </span>
             </Link>
 
@@ -141,7 +141,7 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-border/50 bg-card/50 backdrop-blur-sm">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           <span className="text-sm font-mono tracking-wider text-muted-foreground">
-              The policy standard for agent transactions
+              The policy standard for agent transactions on VanarChain
             </span>
           </div>
         </div>
@@ -230,7 +230,7 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-3 px-5 py-3 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
             <Terminal className="h-4 w-4 text-primary" />
             <code className="text-sm font-mono text-muted-foreground">
-              npm install <span className="text-primary">@anthropic/xbpp</span>
+              npm install <span className="text-primary">@vanarchain/xbpp</span>
             </code>
           </div>
         </div>

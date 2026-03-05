@@ -1,27 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* BPPLAB Design System
+/* Vanar xBPP Design System — VanarChain
    Cold logic. Warm presentation.
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* BPPLAB is dark-first, but we define light for completeness */
-    --background: 220 9% 5%;
+    /* Vanar xBPP is dark-first, but we define light for completeness */
+    --background: 220 14% 4%;
     --foreground: 0 0% 96%;
 
-    --card: 220 9% 8%;
+    --card: 220 14% 7%;
     --card-foreground: 0 0% 96%;
 
     --popover: 220 9% 10%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 217 91% 68%;
+    --primary: 168 97% 43%;
     --primary-foreground: 220 9% 5%;
 
     --secondary: 0 0% 20%;
@@ -30,7 +30,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 217 91% 68%;
+    --accent: 168 97% 43%;
     --accent-foreground: 220 9% 5%;
 
     --destructive: 0 72% 63%;
@@ -38,7 +38,7 @@
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 217 91% 68%;
+    --ring: 168 97% 43%;
 
     --radius: 0.5rem;
 
@@ -55,7 +55,7 @@
     /* Sidebar */
     --sidebar-background: 220 9% 6%;
     --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 217 91% 68%;
+    --sidebar-primary: 168 97% 43%;
     --sidebar-primary-foreground: 220 9% 5%;
     --sidebar-accent: 0 0% 15%;
     --sidebar-accent-foreground: 0 0% 96%;
@@ -63,14 +63,14 @@
     --sidebar-ring: 217 91% 68%;
 
     /* Charts */
-    --chart-1: 217 91% 68%;
+    --chart-1: 168 97% 43%;
     --chart-2: 142 69% 58%;
     --chart-3: 0 91% 71%;
     --chart-4: 43 96% 56%;
     --chart-5: 0 0% 60%;
 
     /* Typography */
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
     /* Shadows */
@@ -81,26 +81,26 @@
   }
 
   .dark {
-    /* Same as root - BPPLAB is dark-first */
+    /* Same as root - Vanar xBPP is dark-first */
     --background: 220 9% 5%;
     --foreground: 0 0% 96%;
     --card: 220 9% 8%;
     --card-foreground: 0 0% 96%;
     --popover: 220 9% 10%;
     --popover-foreground: 0 0% 96%;
-    --primary: 217 91% 68%;
+    --primary: 168 97% 43%;
     --primary-foreground: 220 9% 5%;
     --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
-    --accent: 217 91% 68%;
+    --accent: 168 97% 43%;
     --accent-foreground: 220 9% 5%;
     --destructive: 0 72% 63%;
     --destructive-foreground: 0 0% 96%;
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 217 91% 68%;
+    --ring: 168 97% 43%;
   }
 }
 

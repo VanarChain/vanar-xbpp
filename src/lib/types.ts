@@ -1,4 +1,4 @@
-// BPPLAB Core Object Model
+// Vanar xBPP Core Object Model
 // Aligned with xBPP (Execution Boundary Permission Protocol) Master Specification v1.0
 
 export type Category = 'SPEND' | 'SIGN' | 'DEFENSE';

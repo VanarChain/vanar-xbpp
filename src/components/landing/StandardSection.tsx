@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { FileText, ArrowRight, Copy, Check, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const sdkCode = `import { xbpp } from '@anthropic/xbpp';
+const sdkCode = `import { xbpp } from '@vanarchain/xbpp';
 import { x402Client } from '@coinbase/x402';
 
 // Wrap your x402 client with xBPP protection
