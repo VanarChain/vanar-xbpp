@@ -8,6 +8,8 @@ import {
   HowItWorksSection,
   UseCaseCarousel,
   PlaygroundPreview,
+  WhyMattersSection,
+  WhyNowSection,
   WhoIsForSection,
   FinalCTASection,
   FAQSection,
@@ -53,7 +55,17 @@ export default function Landing() {
         <PlaygroundPreview />
       </ScrollReveal>
       
-      {/* 8. Who It's For - Target personas */}
+      {/* 8. Why It Matters */}
+      <ScrollReveal variant="fade-up">
+        <WhyMattersSection />
+      </ScrollReveal>
+
+      {/* 9. Why Now */}
+      <ScrollReveal variant="fade-up">
+        <WhyNowSection />
+      </ScrollReveal>
+
+      {/* 10. Who It's For - Target personas */}
       <ScrollReveal variant="fade-up">
         <WhoIsForSection />
       </ScrollReveal>
