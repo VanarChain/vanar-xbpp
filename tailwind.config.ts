@@ -123,6 +123,10 @@ export default {
           "50%": { opacity: "1" },
           "100%": { transform: "translateX(100%)", opacity: "0" },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-20px) rotate(2deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

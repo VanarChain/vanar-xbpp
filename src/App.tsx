@@ -39,6 +39,9 @@ const Agents = lazy(() => import("./pages/library/Agents"));
 // Visualization demo
 const VisualizationDemo = lazy(() => import("./pages/VisualizationDemo"));
 
+// Greptile-style landing page V2
+const LandingV2 = lazy(() => import("./pages/LandingV2"));
+
 const queryClient = new QueryClient();
 
 const pageVariants = {
@@ -96,6 +99,9 @@ function AnimatedRoutes() {
             
             {/* Visualization Demo */}
             <Route path="/viz" element={<VisualizationDemo />} />
+            
+            {/* Greptile-style Landing V2 */}
+            <Route path="/v2" element={<LandingV2 />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>
