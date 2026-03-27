@@ -2,7 +2,7 @@
 
 **The policy standard for agent transactions — built on VanarChain.**
 
-xBPP (Extended Business Policy Protocol) gives AI agents a verifiable way to prove they're operating within defined boundaries before spending money or taking actions.
+xBPP (Execution Boundary Permission Protocol) gives AI agents a verifiable way to prove they're operating within defined boundaries before spending money or taking actions.
 
 > Agents can spend money. They just can't prove they should. **xBPP changes that.**
 
@@ -37,5 +37,5 @@ npm run build
 ## Links
 
 - **VanarChain:** https://vanarchain.com
-- **Protocol:** xBPP (Extended Business Policy Protocol)
+- **Protocol:** xBPP (Execution Boundary Permission Protocol)
 - **Package:** `@vanarchain/xbpp`

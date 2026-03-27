@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: 'How do I add spending limits to AI agents?',
-    answer: 'Install @vanarchain/xbpp, create a policy with your limits (max_single, max_daily, require_human_above), and wrap your x402 client. Every transaction is checked before execution. Setup takes under 60 seconds.',
+    answer: 'Install @vanarchain/xbpp (coming soon to npm), create a policy with your limits (max_single, max_daily, require_human_above), and wrap your x402 client. Every transaction is checked before execution. Setup takes under 60 seconds.',
   },
   {
     question: 'What is the difference between xBPP and x402?',

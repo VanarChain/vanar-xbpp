@@ -5,7 +5,7 @@ import { scenarios } from '@/lib/data/scenarios';
 import { Category } from '@/lib/types';
 import { AnimatedBackground } from '@/components/effects';
 import { CategoryFilter, ScenarioCard } from '@/components/scenarios';
-import { useBPPLabStore } from '@/lib/store';
+import { useXBPPStore } from '@/lib/store';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -13,7 +13,7 @@ type FilterOption = 'ALL' | Category;
 
 export default function Scenarios() {
   const [selectedCategory, setSelectedCategory] = useState<FilterOption>('ALL');
-  const { customPolicy, useCustomPolicy, clearCustomPolicy } = useBPPLabStore();
+  const { customPolicy, useCustomPolicy, clearCustomPolicy } = useXBPPStore();
 
   const filteredScenarios = useMemo(() => {
     if (selectedCategory === 'ALL') return scenarios;

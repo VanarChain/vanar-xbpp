@@ -10,7 +10,7 @@ const steps = [
   {
     title: 'Install the SDK',
     description: 'Add xBPP to your project with a single command.',
-    code: 'npm install @vanarchain/xbpp',
+    code: 'npm install @vanarchain/xbpp  # coming soon',
     time: '10 seconds',
   },
   {

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useBPPLabStore } from '@/lib/store';
+import { useXBPPStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 import { DecisionType } from '@/lib/types';
 import { TypewriterText, SplitReveal } from '@/components/effects';
@@ -12,7 +12,7 @@ export default function Diff() {
   const navigate = useNavigate();
   const scenarioId = searchParams.get('scenario');
   
-  const { selectedScenario, diff, loadScenarioData, policyA, policyB } = useBPPLabStore();
+  const { selectedScenario, diff, loadScenarioData, policyA, policyB } = useXBPPStore();
   
   // Animation states - more theatrical timing
   const [phase, setPhase] = useState(0);

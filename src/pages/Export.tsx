@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Download, FileJson, FileText, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useBPPLabStore } from '@/lib/store';
+import { useXBPPStore } from '@/lib/store';
 import { permissivePolicy, restrictivePolicy } from '@/lib/data/policies';
 import { AnimatedBackground } from '@/components/effects';
 
@@ -11,7 +11,7 @@ export default function Export() {
   const navigate = useNavigate();
   const scenarioId = searchParams.get('scenario');
   
-  const { selectedScenario, diff, loadScenarioData } = useBPPLabStore();
+  const { selectedScenario, diff, loadScenarioData } = useXBPPStore();
   const [downloadedItems, setDownloadedItems] = useState<Set<string>>(new Set());
   
   useEffect(() => {
