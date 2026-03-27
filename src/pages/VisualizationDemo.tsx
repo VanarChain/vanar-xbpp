@@ -1,4 +1,4 @@
-import { TransactionFlow } from '@/components/visualization';
+import { TransactionFlow, WizardMascot } from '@/components/visualization';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -85,6 +85,32 @@ export default function VisualizationDemo() {
             <p className="text-sm text-gray-600">
               ALLOW (proceed), ESCALATE (human approval), or BLOCK (policy violation)
             </p>
+          </div>
+        </motion.div>
+
+        {/* Wizard Mascot */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-16"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 rounded-full bg-purple-500" />
+            <span className="text-xs font-semibold tracking-[0.2em] text-purple-500 uppercase">
+              The Gatekeeper Mascot
+            </span>
+          </div>
+          <h2 className="text-3xl font-display font-bold italic text-[#1E2D2D] uppercase tracking-tight mb-4">
+            The Wizard
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-xl">
+            An interactive wizard mascot powered by Lottie. Features idle, skill (evaluate), 
+            and attack (block) states that can be triggered programmatically.
+          </p>
+          
+          <div className="bg-gradient-to-br from-[#1a1a2e] to-[#16213e] rounded-2xl p-8 flex justify-center">
+            <WizardMascot width={350} height={350} />
           </div>
         </motion.div>
 
