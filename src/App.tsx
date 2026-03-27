@@ -42,6 +42,9 @@ const VisualizationDemo = lazy(() => import("./pages/VisualizationDemo"));
 // Greptile-style landing page V2
 const LandingV2 = lazy(() => import("./pages/LandingV2"));
 
+// Greptile pixel-perfect V3
+const LandingV3 = lazy(() => import("./pages/LandingV3"));
+
 const queryClient = new QueryClient();
 
 const pageVariants = {
@@ -102,6 +105,9 @@ function AnimatedRoutes() {
             
             {/* Greptile-style Landing V2 */}
             <Route path="/v2" element={<LandingV2 />} />
+            
+            {/* Greptile pixel-perfect V3 */}
+            <Route path="/v3" element={<LandingV3 />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>
