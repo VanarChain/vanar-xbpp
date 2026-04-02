@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Copy, Check, ArrowRight, Play, Zap, Clock } from 'lucide-react';
 import { AnimatedBackground } from '@/components/effects';
-import { SEOHead } from '@/components/seo';
+import { SEOHead, StructuredData, schemas } from '@/components/seo';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -91,6 +91,7 @@ export default function QuickStart() {
         description="Use the open reference SDK, wrap your x402 client, and enforce payment policies on your AI agent in under 60 seconds."
         path="/learn/quick-start"
       />
+      <StructuredData data={schemas.softwareApplication} />
       <div className="min-h-screen pt-28 pb-20 px-6 relative overflow-hidden">
       <AnimatedBackground variant="subtle" />
 

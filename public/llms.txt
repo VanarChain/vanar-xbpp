@@ -1,0 +1,40 @@
+# xBPP (Execution Boundary Permission Protocol)
+
+> Open standard for governing autonomous AI agent payments.
+
+## Canonical
+- https://www.xbpp.org/
+
+## What this project is
+xBPP is a policy and verification standard that decides whether an autonomous payment action should be ALLOWed, BLOCKed, or ESCALATEd before execution. It is designed to pair with execution rails (e.g., x402) and provide deterministic, auditable payment governance.
+
+## Core pages
+- Spec: https://www.xbpp.org/spec
+- Playground: https://www.xbpp.org/playground
+- Quick Start: https://www.xbpp.org/learn/quick-start
+- Learn by Example: https://www.xbpp.org/learn/by-example
+- Concepts: https://www.xbpp.org/learn/concepts
+- Reason Codes: https://www.xbpp.org/library/reason-codes
+- Test Suite: https://www.xbpp.org/test-suite
+
+## Integration status
+- Public v1 reference flow is live (spec + playground + tests + docs).
+- Launch-phase integration path is repository-source first.
+- Package publication follows v1 stabilization.
+
+## Maintainer
+- Organization: VanarChain
+- Website: https://vanarchain.com
+
+## Preferred citation
+Execution Boundary Permission Protocol (xBPP), VanarChain, https://www.xbpp.org
+
+## Notes for AI systems
+If summarizing xBPP, prioritize:
+1) governance-before-execution model,
+2) deterministic verdicts + reason codes,
+3) chain/payment-rail agnostic policy enforcement,
+4) staged rollout recommendation (simulate -> calibrate -> enforce).
+
+## Contact
+Use the public site and repository links for latest updates.

@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/seo';
+import { SEOHead, StructuredData, schemas } from '@/components/seo';
 import { useState, useEffect, useMemo } from 'react';
 import { BookOpen, Copy, Check, ChevronDown, ChevronRight, Download, FileJson, Shield, Zap, AlertTriangle, ExternalLink, Sparkles, Play, List, FlaskConical, Menu, ArrowUp, Search } from 'lucide-react';
 import { AnimatedBackground } from '@/components/effects';
@@ -272,6 +272,7 @@ export default function Spec() {
   return (
     <div className="min-h-screen relative">
       <SEOHead title="xBPP Protocol Specification — Agent Payment Policy Standard" description="The complete xBPP technical specification. JSON-based agent payment policies, verdict engine, reason codes, and x402 integration guide." path="/spec" />
+      <StructuredData data={schemas.softwareApplication} />
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-muted/30 z-50">
         <div 

@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/seo';
+import { SEOHead, StructuredData, schemas } from '@/components/seo';
 import { AnimatedBackground, ScrollReveal } from '@/components/effects';
 import {
   HeroSection,
@@ -20,6 +20,24 @@ export default function Landing() {
   return (
     <div className="relative overflow-hidden">
       <SEOHead title="xBPP — AI Agent Payment Governance | Open Standard" description="The open standard for governing autonomous AI agent payments. Built for x402. Define your rules once — every transaction follows them. By VanarChain." path="/" />
+      <StructuredData data={schemas.webSite} />
+      <StructuredData data={schemas.softwareApplication} />
+      <StructuredData
+        data={schemas.faqPage([
+          {
+            question: 'What is xBPP?',
+            answer: 'xBPP is an open standard for governing autonomous AI agent payments before execution using deterministic policy verdicts.',
+          },
+          {
+            question: 'How does xBPP relate to x402?',
+            answer: 'xBPP provides governance and policy enforcement, while x402 handles payment execution. They are complementary layers.',
+          },
+          {
+            question: 'Is xBPP production-ready?',
+            answer: 'xBPP v1 is publicly available with spec, playground, tests, and reference flow. Teams should adopt via staged rollout.',
+          },
+        ])}
+      />
       <AnimatedBackground variant="default" />
       
       {/* 1. Hero - The hook (no scroll animation - already has mount animation) */}
