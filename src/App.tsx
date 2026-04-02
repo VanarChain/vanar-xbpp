@@ -30,6 +30,7 @@ const LearnIndex = lazy(() => import("./pages/learn/index"));
 const QuickStart = lazy(() => import("./pages/learn/QuickStart"));
 const ByExample = lazy(() => import("./pages/learn/ByExample"));
 const Concepts = lazy(() => import("./pages/learn/Concepts"));
+const AIOverview = lazy(() => import("./pages/AIOverview"));
 
 // Library pages
 const LibraryIndex = lazy(() => import("./pages/library/index"));
@@ -66,6 +67,7 @@ function AnimatedRoutes() {
             <Route path="/learn/quick-start" element={<QuickStart />} />
             <Route path="/learn/by-example" element={<ByExample />} />
             <Route path="/learn/concepts" element={<Concepts />} />
+            <Route path="/ai-overview" element={<AIOverview />} />
             
             {/* Library Routes */}
             <Route path="/library" element={<LibraryIndex />} />

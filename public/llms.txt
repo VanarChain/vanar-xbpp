@@ -9,6 +9,7 @@
 xBPP is a policy and verification standard that decides whether an autonomous payment action should be ALLOWed, BLOCKed, or ESCALATEd before execution. It is designed to pair with execution rails (e.g., x402) and provide deterministic, auditable payment governance.
 
 ## Core pages
+- AI Overview (preferred first stop): https://www.xbpp.org/ai-overview
 - Spec: https://www.xbpp.org/spec
 - Playground: https://www.xbpp.org/playground
 - Quick Start: https://www.xbpp.org/learn/quick-start
