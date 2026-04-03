@@ -74,20 +74,17 @@ export function HeroSection() {
             </div>
 
             {/* Right CTA - Desktop */}
-            <a
-              href="https://github.com/jawaddxb/xbpp-sdk"
-              target="_blank"
-              rel="noreferrer"
-              className="hidden lg:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold tracking-wider uppercase text-white transition-opacity hover:opacity-90"
+            <Link
+              to="/playground"
+              className="hidden lg:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold tracking-wider uppercase text-white transition-all duration-300 hover:scale-105"
               style={{
                 background: 'linear-gradient(135deg, #03D9AF, #029a7d)',
                 clipPath: 'polygon(10px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10px)',
               }}
-              title="View xbpp-sdk source"
             >
-              <Github className="h-4 w-4" />
-              View SDK Source
-            </a>
+              <PlayCircle className="h-4 w-4" />
+              GET STARTED
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -199,7 +196,7 @@ export function HeroSection() {
             className={`mb-8 max-w-xl transition-all duration-500 delay-200 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ fontSize: '17px', lineHeight: 1.7, color: '#6B6F7D', fontFamily: "'Figtree', sans-serif" }}
           >
-            xBPP is the open standard that answers one question before every agent action: should this be allowed? Define policies once — spending limits, approved vendors, escalation rules — and every agent follows them. No custom code. No prayer. Just policy.
+            xBPP is the open standard that governs what AI agents are allowed to spend — before they spend it. Define policies once — spending limits, approved vendors, escalation rules — and every agent follows them. No custom code. No prayer. Just policy.
           </p>
 
           {/* Feature Dot Row */}
@@ -211,24 +208,61 @@ export function HeroSection() {
             <div className="feature-dot">Chain agnostic</div>
           </div>
 
-          <p
-            className={`mb-10 text-sm transition-all duration-500 delay-275 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            style={{ color: '#6B6F7D', fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            Public now: Spec • Playground • Test Suite • Reference Flow
-          </p>
-
           {/* CTA Buttons */}
           <div
             className={`flex flex-col sm:flex-row gap-4 transition-all duration-500 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             <Link to="/playground" className="btn-primary">
-              TRY THE PLAYGROUND
+              RUN A POLICY CHECK
             </Link>
 
             <Link to="/spec" className="hover-btn">
               READ THE SPEC
             </Link>
+
+            <a
+              href="https://github.com/Big-Immersive/xbpp-sdk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-4 text-xs font-bold tracking-widest uppercase transition-all duration-300 opacity-60 hover:opacity-100"
+              style={{ color: '#6B6F7D', fontFamily: "'Figtree', sans-serif" }}
+            >
+              <Github className="h-4 w-4" />
+              VIEW SDK SOURCE
+            </a>
+          </div>
+
+          {/* Audience Selector - Who are you? */}
+          <div
+            className={`mt-16 transition-all duration-500 delay-400 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          >
+            <p className="text-xs font-mono uppercase tracking-[0.2em] mb-6" style={{ color: '#9E9E98' }}>Who are you?</p>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: 'Merchant', target: '#audience-merchants' },
+                { label: 'AI Builder', target: '#audience-builders' },
+                { label: 'Enterprise CFO', target: '#audience-enterprise' },
+                { label: 'Protocol Designer', target: '#audience-protocols' },
+              ].map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => {
+                    const el = document.querySelector(item.target);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="px-5 py-2.5 text-[11px] font-bold tracking-widest uppercase transition-all duration-300 hover:-translate-y-0.5"
+                  style={{
+                    background: 'white',
+                    border: '1px solid #CAD0DA',
+                    color: '#282B35',
+                    fontFamily: "'Figtree', sans-serif",
+                    clipPath: 'polygon(8px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 8px)',
+                  }}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </main>

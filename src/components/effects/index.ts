@@ -5,3 +5,4 @@ export { SplitReveal } from './SplitReveal';
 export { MetricCounter } from './MetricCounter';
 export { ParticleField } from './ParticleField';
 export { ScrollReveal, StaggerContainer } from './ScrollReveal';
+export { ScrollProgress } from './ScrollProgress';

@@ -1,93 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.xbpp.org/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://xbpp.org/</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.xbpp.org/spec</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/playground</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://xbpp.org/how-it-works</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.xbpp.org/test-suite</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <loc>https://xbpp.org/compare/xbpp-vs-x402</loc>
+    <lastmod>2026-04-03</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.xbpp.org/learn</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/learn/quick-start</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://xbpp.org/learn/quick-start</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.xbpp.org/learn/by-example</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://xbpp.org/playground</loc>
+    <lastmod>2026-04-03</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://xbpp.org/spec</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/learn/concepts</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/library</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/library/policies</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/library/scenarios</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/library/reason-codes</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/library/agents</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/scenarios</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.xbpp.org/ai-overview</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
   </url>
 </urlset>

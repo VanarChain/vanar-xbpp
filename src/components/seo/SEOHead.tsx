@@ -30,6 +30,50 @@ export function SEOHead({ title, description, path = '/', image }: SEOHeadProps)
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      
+      {/* Schema.org Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${BASE_URL}/#organization`,
+              "name": "Big Immersive",
+              "url": BASE_URL,
+              "logo": `${BASE_URL}/logo.png`,
+              "sameAs": [
+                "https://github.com/Big-Immersive"
+              ]
+            },
+            {
+              "@type": "SoftwareApplication",
+              "@id": `${BASE_URL}/#software`,
+              "name": "xBPP",
+              "url": BASE_URL,
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "All",
+              "abstract": "The open standard for AI agent payment governance.",
+              "featureList": [
+                "Agent payment rules",
+                "x402 integration",
+                "Chain-agnostic policy enforcement",
+                "Real-time transaction verdicts"
+              ],
+              "codeRepository": "https://github.com/Big-Immersive/xbpp-sdk",
+              "author": { "@id": `${BASE_URL}/#organization` }
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${BASE_URL}/#website`,
+              "url": BASE_URL,
+              "name": SITE_NAME,
+              "description": "AI Agent Payment Governance Standard",
+              "publisher": { "@id": `${BASE_URL}/#organization` }
+            }
+          ]
+        })}
+      </script>
     </Helmet>
   );
 }

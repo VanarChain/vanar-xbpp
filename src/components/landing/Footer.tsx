@@ -4,7 +4,7 @@ const buildLinks = [
   { label: 'Quick Start Guide', path: '/learn/quick-start' },
   { label: 'Interactive Playground', path: '/playground' },
   { label: 'Protocol Specification', path: '/spec' },
-  { label: 'Quick Start', path: '/learn/quick-start' },
+  { label: 'SDK Reference', path: '/learn/quick-start' },
 ];
 
 const libraryLinks = [

@@ -1,4 +1,3 @@
-import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,35 +6,33 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Header } from "@/components/layout";
-
-// Eagerly load the landing page (first paint)
+import { ScrollProgress } from "@/components/effects";
 import Landing from "./pages/Landing";
+import HowItWorks from "./pages/HowItWorks";
+import Scenarios from "./pages/Scenarios";
+import Matrix from "./pages/Matrix";
+import ComparePolicies from "./pages/ComparePolicies";
+import CompareXbppVsX402 from "./pages/CompareXbppVsX402";
+import Run from "./pages/Run";
+import Diff from "./pages/Diff";
+import Summary from "./pages/Summary";
+import Export from "./pages/Export";
+import Spec from "./pages/Spec";
+import PolicyBank from "./pages/PolicyBank";
+import TestSuite from "./pages/TestSuite";
+import Playground from "./pages/Playground";
 import NotFound from "./pages/NotFound";
 
-// Lazy-load all other pages for code splitting
-const Scenarios = lazy(() => import("./pages/Scenarios"));
-const Matrix = lazy(() => import("./pages/Matrix"));
-const Compare = lazy(() => import("./pages/Compare"));
-const Run = lazy(() => import("./pages/Run"));
-const Diff = lazy(() => import("./pages/Diff"));
-const Summary = lazy(() => import("./pages/Summary"));
-const Export = lazy(() => import("./pages/Export"));
-const Spec = lazy(() => import("./pages/Spec"));
-const PolicyBank = lazy(() => import("./pages/PolicyBank"));
-const TestSuite = lazy(() => import("./pages/TestSuite"));
-const Playground = lazy(() => import("./pages/Playground"));
-
 // Learn pages
-const LearnIndex = lazy(() => import("./pages/learn/index"));
-const QuickStart = lazy(() => import("./pages/learn/QuickStart"));
-const ByExample = lazy(() => import("./pages/learn/ByExample"));
-const Concepts = lazy(() => import("./pages/learn/Concepts"));
-const AIOverview = lazy(() => import("./pages/AIOverview"));
+import LearnIndex from "./pages/learn/index";
+import QuickStart from "./pages/learn/QuickStart";
+import ByExample from "./pages/learn/ByExample";
+import Concepts from "./pages/learn/Concepts";
 
 // Library pages
-const LibraryIndex = lazy(() => import("./pages/library/index"));
-const ReasonCodes = lazy(() => import("./pages/library/ReasonCodes"));
-const Agents = lazy(() => import("./pages/library/Agents"));
+import LibraryIndex from "./pages/library/index";
+import ReasonCodes from "./pages/library/ReasonCodes";
+import Agents from "./pages/library/Agents";
 
 const queryClient = new QueryClient();
 
@@ -58,44 +55,43 @@ function AnimatedRoutes() {
         variants={pageVariants}
         className="min-h-screen"
       >
-        <Suspense fallback={<div className="min-h-screen" />}>
-          <Routes location={location}>
-            <Route path="/" element={<Landing />} />
-            
-            {/* Learn Routes */}
-            <Route path="/learn" element={<LearnIndex />} />
-            <Route path="/learn/quick-start" element={<QuickStart />} />
-            <Route path="/learn/by-example" element={<ByExample />} />
-            <Route path="/learn/concepts" element={<Concepts />} />
-            <Route path="/ai-overview" element={<AIOverview />} />
-            
-            {/* Library Routes */}
-            <Route path="/library" element={<LibraryIndex />} />
-            <Route path="/library/policies" element={<PolicyBank />} />
-            <Route path="/library/scenarios" element={<Scenarios />} />
-            <Route path="/library/reason-codes" element={<ReasonCodes />} />
-            <Route path="/library/agents" element={<Agents />} />
-            
-            {/* Demo Flow */}
-            <Route path="/scenarios" element={<Scenarios />} />
-            <Route path="/policies" element={<PolicyBank />} />
-            <Route path="/matrix" element={<Matrix />} />
-            <Route path="/compare" element={<Compare />} />
-            <Route path="/run" element={<Run />} />
-            <Route path="/diff" element={<Diff />} />
-            <Route path="/summary" element={<Summary />} />
-            <Route path="/export" element={<Export />} />
-            
-            {/* Playground */}
-            <Route path="/playground" element={<Playground />} />
-            
-            {/* Spec & Tools */}
-            <Route path="/spec" element={<Spec />} />
-            <Route path="/test-suite" element={<TestSuite />} />
-            
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+        <Routes location={location}>
+          <Route path="/" element={<Landing />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          
+          {/* Learn Routes */}
+          <Route path="/learn" element={<LearnIndex />} />
+          <Route path="/learn/quick-start" element={<QuickStart />} />
+          <Route path="/learn/by-example" element={<ByExample />} />
+          <Route path="/learn/concepts" element={<Concepts />} />
+          
+          {/* Library Routes */}
+          <Route path="/library" element={<LibraryIndex />} />
+          <Route path="/library/policies" element={<PolicyBank />} />
+          <Route path="/library/scenarios" element={<Scenarios />} />
+          <Route path="/library/reason-codes" element={<ReasonCodes />} />
+          <Route path="/library/agents" element={<Agents />} />
+          
+          {/* Demo Flow */}
+          <Route path="/scenarios" element={<Scenarios />} />
+          <Route path="/policies" element={<PolicyBank />} />
+          <Route path="/matrix" element={<Matrix />} />
+          <Route path="/compare" element={<ComparePolicies />} />
+          <Route path="/compare/xbpp-vs-x402" element={<CompareXbppVsX402 />} />
+          <Route path="/run" element={<Run />} />
+          <Route path="/diff" element={<Diff />} />
+          <Route path="/summary" element={<Summary />} />
+          <Route path="/export" element={<Export />} />
+          
+          {/* Playground */}
+          <Route path="/playground" element={<Playground />} />
+          
+          {/* Spec & Tools */}
+          <Route path="/spec" element={<Spec />} />
+          <Route path="/test-suite" element={<TestSuite />} />
+          
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </motion.div>
     </AnimatePresence>
   );
@@ -105,6 +101,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <GrainOverlay />
+      <ScrollProgress />
       <Toaster />
       <Sonner />
       <BrowserRouter>

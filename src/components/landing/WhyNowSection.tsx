@@ -85,31 +85,36 @@ export function WhyNowSection() {
           </h2>
         </div>
 
-        {/* Ecosystem Players */}
+        {/* Ecosystem Context */}
         <div className={cn(
           "mb-12 transition-all duration-700 delay-200",
           showPlayers ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
-          <p className="text-center text-sm font-mono uppercase tracking-wider mb-6" style={{ color: '#9E9E98' }}>
-            The industry is already building toward this future
+          <p className="text-center text-sm font-mono uppercase tracking-widest mb-10" style={{ color: '#9E9E98' }}>
+            Market Context: The Agentic Economy
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {ecosystemPlayers.map((player, index) => (
               <div
                 key={player.name}
-                className="p-4 rounded-xl ferron-card hover:shadow-md transition-all duration-300"
-                style={{ transitionDelay: `${index * 100}ms` }}
+                className="relative p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1"
+                style={{ 
+                  transitionDelay: `${index * 100}ms`,
+                  background: 'white',
+                  border: '1px solid #E2E2DE',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.02)'
+                }}
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <player.icon className="w-4 h-4" style={{ color: player.color }} />
-                  <span className="font-medium text-sm" style={{ color: '#1E2D2D' }}>{player.name}</span>
+                <div className="p-2.5 rounded-lg w-fit mb-4" style={{ background: `${player.color}15` }}>
+                  <player.icon className="w-5 h-5" style={{ color: player.color }} />
                 </div>
-                <p className="text-xs" style={{ color: '#6B6B67' }}>{player.action}</p>
+                <h4 className="font-bold text-sm mb-2 uppercase tracking-wider" style={{ color: '#1E2D2D' }}>{player.name}</h4>
+                <p className="text-xs leading-relaxed" style={{ color: '#6B6B67' }}>{player.action}</p>
               </div>
             ))}
           </div>
-          <p className="text-center text-sm mt-4 italic" style={{ color: '#6B6B67' }}>
-            They're all waiting for the same thing: <span style={{ color: '#1E2D2D', fontStyle: 'normal', fontWeight: 500 }}>a standard for safe spending.</span>
+          <p className="text-center text-sm mt-10 italic max-w-2xl mx-auto" style={{ color: '#6B6B67' }}>
+            Emerging platforms are standardizing infrastructure. They're all waiting for the same missing piece: <span style={{ color: '#1E2D2D', fontStyle: 'normal', fontWeight: 500 }}>a shared standard for agent governance.</span>
           </p>
         </div>
 

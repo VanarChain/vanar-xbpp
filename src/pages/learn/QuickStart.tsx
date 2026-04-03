@@ -2,19 +2,16 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Copy, Check, ArrowRight, Play, Zap, Clock } from 'lucide-react';
 import { AnimatedBackground } from '@/components/effects';
-import { SEOHead, StructuredData, schemas } from '@/components/seo';
+import { SEOHead } from '@/components/seo';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const steps = [
   {
-    title: 'Get the Reference SDK',
-    description: 'Use the public source directly while the npm package is being finalized.',
-    code: `git clone https://github.com/jawaddxb/xbpp-sdk.git
-cd xbpp-sdk
-pnpm install
-pnpm build`,
-    time: '20 seconds',
+    title: 'Install the SDK',
+    description: 'Add xBPP to your project with a single command.',
+    code: 'npm install @vanarchain/xbpp',
+    time: '10 seconds',
   },
   {
     title: 'Wrap Your Client',
@@ -84,14 +81,33 @@ export default function QuickStart() {
     );
   };
 
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Add Payment Governance to AI Agents",
+    "description": "Add xBPP to your AI agent in under 60 seconds to enforce payment policies.",
+    "totalTime": "PT60S",
+    "step": steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "name": step.title,
+      "text": step.description,
+      "position": index + 1
+    }))
+  };
+
   return (
     <>
       <SEOHead
         title="xBPP Quick Start — Add Payment Governance to AI Agents in 60 Seconds"
-        description="Use the open reference SDK, wrap your x402 client, and enforce payment policies on your AI agent in under 60 seconds."
+        description="Install @vanarchain/xbpp, wrap your x402 client, and enforce payment policies on your AI agent in under 60 seconds."
         path="/learn/quick-start"
       />
-      <StructuredData data={schemas.softwareApplication} />
+      
+      {/* HowTo Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(howToSchema)}
+      </script>
+
       <div className="min-h-screen pt-28 pb-20 px-6 relative overflow-hidden">
       <AnimatedBackground variant="subtle" />
 
@@ -110,10 +126,6 @@ export default function QuickStart() {
           </p>
         </header>
         
-        <div className="mb-8 p-4 rounded-xl border border-amber-300/60 bg-amber-50/70 text-amber-900 text-sm">
-          <strong>Package status:</strong> <code>@vanarchain/xbpp</code> will be published after v1 stabilization. Use the repository source during launch phase.
-        </div>
-
         {/* Steps */}
         <div className="space-y-8 mb-12">
           {steps.map((step, index) => (

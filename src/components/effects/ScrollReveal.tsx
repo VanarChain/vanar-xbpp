@@ -45,7 +45,7 @@ export function ScrollReveal({
   variant = 'fade-up',
   delay = 0,
   duration = 700,
-  threshold = 0.15,
+  threshold = 0.05,
   className,
   once = true,
 }: ScrollRevealProps) {
@@ -64,7 +64,7 @@ export function ScrollReveal({
           setIsVisible(false);
         }
       },
-      { threshold, rootMargin: '0px 0px -50px 0px' }
+      { threshold, rootMargin: '0px 0px -10% 0px' }
     );
 
     if (ref.current) {

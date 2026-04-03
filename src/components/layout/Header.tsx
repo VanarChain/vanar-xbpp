@@ -224,19 +224,30 @@ export function Header() {
               </Link>
             </Button>
 
-            {/* Test Suite */}
+            {/* How It Works */}
             <Button 
               variant="ghost" 
               size="sm" 
               asChild
               className={cn(
                 "gap-1 text-muted-foreground hover:text-foreground",
-                currentPath === '/test-suite' && "text-primary bg-primary/10"
+                currentPath === '/how-it-works' && "text-primary bg-primary/10"
               )}
             >
-              <Link to="/test-suite">
-                <FlaskConical className="h-4 w-4" />
-                Test Suite
+              <Link to="/how-it-works">
+                <Target className="h-4 w-4" />
+                How It Works
+              </Link>
+            </Button>
+
+            {/* Get Started Button */}
+            <Button 
+              size="sm" 
+              asChild
+              className="ml-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider uppercase text-[10px]"
+            >
+              <Link to="/learn/quick-start">
+                Get Started
               </Link>
             </Button>
           </nav>

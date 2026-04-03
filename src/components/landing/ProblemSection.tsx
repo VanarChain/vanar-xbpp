@@ -201,29 +201,53 @@ export function ProblemSection() {
           </div>
         </div>
 
-        {/* Pilot Purgatory */}
+        {/* Pilot Purgatory - Prominent Callout */}
         <div className={cn(
-          "transition-all duration-700 delay-200",
-          showResult ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          "transition-all duration-700 delay-200 mt-20",
+          showResult ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <div
-            className="flex flex-col md:flex-row items-center gap-6 p-8"
+            className="relative p-12 md:p-16 text-center overflow-hidden"
             style={{
-              background: 'linear-gradient(75.85deg, #ffffff 14.68%, #e9eff0 184.03%)',
-              clipPath: 'polygon(40px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 40px)',
+              background: '#1E2D2D',
+              clipPath: 'polygon(60px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 60px)',
             }}
           >
-            <div className="flex items-center justify-center w-16 h-16" style={{ background: 'rgba(40, 43, 53, 0.05)', border: '1px solid #CAD0DA' }}>
-              <Laptop className="h-8 w-8" style={{ color: '#6B6F7D' }} />
-            </div>
-            <div className="md:text-left">
-              <p className="text-sm font-mono tracking-widest uppercase mb-2" style={{ color: '#6B6F7D' }}>The Result</p>
-              <h3 className="text-2xl font-medium mb-2" style={{ color: '#282B35', fontFamily: "'Figtree', sans-serif" }}>
-                <span style={{ color: '#FACC15' }}>"Pilot Purgatory"</span>
+            {/* Background accent */}
+            <div 
+              className="absolute top-0 right-0 w-64 h-64 opacity-20 pointer-events-none"
+              style={{ background: 'radial-gradient(circle at center, #FACC15 0%, transparent 70%)', filter: 'blur(40px)' }}
+            />
+            
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <span className="inline-block px-4 py-1.5 rounded-full mb-8 text-xs font-bold tracking-[0.2em] uppercase" style={{ background: 'rgba(250, 204, 21, 0.15)', color: '#FACC15', border: '1px solid rgba(250, 204, 21, 0.3)' }}>
+                THE AGENTIC STALEMATE
+              </span>
+              
+              <h3 
+                className="mb-8"
+                style={{ 
+                  fontFamily: "'Akira Expanded', 'Arial Black', sans-serif", 
+                  fontSize: 'clamp(28px, 4vw, 48px)',
+                  lineHeight: 1.1,
+                  color: 'white'
+                }}
+              >
+                STUCK IN <span style={{ color: '#FACC15' }}>PILOT PURGATORY</span>
               </h3>
-              <p className="max-w-lg" style={{ color: '#6B6F7D', fontFamily: "'Figtree', sans-serif" }}>
-                Thousands of high-capability agents sitting on local laptops, <span style={{ color: '#282B35', fontWeight: 500 }}>forbidden from touching real money</span> because the liability risk is infinite.
+              
+              <p 
+                className="text-lg md:text-xl leading-relaxed opacity-80" 
+                style={{ color: '#E2E2DE', fontFamily: "'Figtree', sans-serif" }}
+              >
+                "Thousands of high-capability agents sitting on local laptops, forbidden from touching real money because the liability risk is infinite."
               </p>
+              
+              <div className="mt-10 flex items-center justify-center gap-4">
+                <div className="h-px w-12 bg-white/20" />
+                <span className="text-sm font-mono uppercase tracking-widest text-white/40">Market Reality 2026</span>
+                <div className="h-px w-12 bg-white/20" />
+              </div>
             </div>
           </div>
         </div>
