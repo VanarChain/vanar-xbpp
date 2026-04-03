@@ -43,7 +43,7 @@ export function SEOHead({ title, description, path = '/', image }: SEOHeadProps)
               "url": BASE_URL,
               "logo": `${BASE_URL}/logo.png`,
               "sameAs": [
-                "https://github.com/Big-Immersive"
+                "https://github.com/VanarChain"
               ]
             },
             {
@@ -60,7 +60,7 @@ export function SEOHead({ title, description, path = '/', image }: SEOHeadProps)
                 "Chain-agnostic policy enforcement",
                 "Real-time transaction verdicts"
               ],
-              "codeRepository": "https://github.com/Big-Immersive/xbpp-sdk",
+              "codeRepository": "https://github.com/VanarChain/vanar-xbpp",
               "author": { "@id": `${BASE_URL}/#organization` }
             },
             {

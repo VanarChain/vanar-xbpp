@@ -221,7 +221,7 @@ export function HeroSection() {
             </Link>
 
             <a
-              href="https://github.com/Big-Immersive/xbpp-sdk"
+              href="https://github.com/VanarChain/vanar-xbpp"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-4 text-xs font-bold tracking-widest uppercase transition-all duration-300 opacity-60 hover:opacity-100"

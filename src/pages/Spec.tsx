@@ -351,7 +351,7 @@ export default function Spec() {
                   </a>
                 </Button>
                 <Button variant="ghost" size="sm" asChild>
-                  <a href="https://github.com/Big-Immersive/xbpp-sdk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <a href="https://github.com/VanarChain/vanar-xbpp" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <ExternalLink className="h-4 w-4" />
                     GitHub
                   </a>
